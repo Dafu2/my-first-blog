@@ -7,10 +7,12 @@
       <h1><a href="">A Learning Blog because riley is a LUMBERJACK</a></h1>
     </div>
 
-    <div>
-      <p>published: 10.06.2016, 12:00</p>
-      <h2><a href="">A first post</a></h2>
-      <p>Another section of writing</p>
-    </div>
+    {% for post in posts %}
+        <div>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href = "">{{ post.title}}</a></h1>
+          <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
   </body>
 </html>
